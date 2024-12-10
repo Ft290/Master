@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Page</title>
+</head>
+<body>
+    <h1>Master Page</h1>
+    <button id="sendMessage">Send "Merhaba, Slave"</button>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8080');
+
+        socket.addEventListener('open', () => {
+            console.log('Connected to WebSocket server.');
+        });
+
+        document.getElementById('sendMessage').addEventListener('click', () => {
+            const message = 'Merhaba, Slave';
+            socket.send(message);
+            console.log('Message sent:', message);
+        });
+
+        socket.addEventListener('close', () => {
+            console.log('WebSocket connection closed.');
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Page</title>
+</head>
+<body>
+    <h1>Master Page</h1>
+    <button id="sendMessage">Send "Merhaba, Slave"</button>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8080');
+
+        socket.addEventListener('open', () => {
+            console.log('Connected to WebSocket server.');
+        });
+
+        document.getElementById('sendMessage').addEventListener('click', () => {
+            const message = 'Merhaba, Slave';
+            socket.send(message);
+            console.log('Message sent:', message);
+        });
+
+        socket.addEventListener('close', () => {
+            console.log('WebSocket connection closed.');
+        });
+    </script>
+</body>
+</html>
