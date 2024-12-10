@@ -1,1 +1,26 @@
-messages.json
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Page</title>
+</head>
+<body>
+    <h1>Master Page</h1>
+    <textarea id="messageInput" placeholder="Enter your message here"></textarea>
+    <button onclick="sendMessage()">Send Message</button>
+
+    <script>
+        function sendMessage() {
+            const message = document.getElementById('messageInput').value;
+
+            // Simüle: Mesajı localStorage içine kaydet
+            let messages = JSON.parse(localStorage.getItem('messages')) || [];
+            messages.push(message);
+            localStorage.setItem('messages', JSON.stringify(messages));
+
+            alert('Message sent!');
+        }
+    </script>
+</body>
+</html>
